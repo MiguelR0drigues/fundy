@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-12">
         <div class="inner-content">
-            <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+            <p>Copyright © 2022 Fundy</a></p>
         </div>
         </div>
     </div>
