@@ -7,10 +7,12 @@
     <div class="row">
       <div class="col-md-12">
         <div class="inner-content">
+          <p>Copyright © 2022 Fundy</a></p>
           <p>Copyright © 2020 Fundy</p>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </footer>
 
