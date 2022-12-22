@@ -41,7 +41,7 @@
                     echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="logout.php">Logout</a></li>';
                 }else{
                     echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="login.php">Sign in</a></li>';
-                    echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="register.php">Sign un</a></li>';
+                    echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="register.php">Sign up</a></li>';
                 }
             ?>
             
