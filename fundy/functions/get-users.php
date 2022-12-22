@@ -1,11 +1,8 @@
 <?php
 
-function getUSerInfoById($id, $conn){
-  $stmt = mysqli_prepare($conn, "SELECT `name`, `email`, `type`, `isVerified` FROM users WHERE id = ?");
-  mysqli_stmt_bind_param($stmt, "i", $id);
+function getUSers( $conn){
+  $stmt = mysqli_prepare($conn, "SELECT * FROM users");
 
-  // Set parameters and execute
-  $id = 1;
   mysqli_stmt_execute($stmt);
   $result = mysqli_stmt_get_result($stmt);
 
