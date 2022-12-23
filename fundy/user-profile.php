@@ -14,6 +14,7 @@ $userInfo = mysqli_fetch_assoc($queryResult);
 echo $userId;
 
 // TODO: Handle acess other user pages by changing id on URL
+// TODO: Make responsive
 
 ?>
 <main class="row container-fluid col-12">
