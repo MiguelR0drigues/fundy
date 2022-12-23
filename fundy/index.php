@@ -2,6 +2,7 @@
  include ('includes/header.php');
  include('includes/preloader.php');
  include('includes/navbar.php');
+
 ?>
 
   <body>

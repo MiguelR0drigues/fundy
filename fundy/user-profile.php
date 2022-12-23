@@ -9,56 +9,47 @@ include 'includes/preloader.php';
 include 'includes/navbar.php';
 
 $userId = $_GET['id'];
-$userInfo = getUSerInfoById($userId,$conn);
-// if (mysqli_num_rows($userInfo) > 0) {
-//   // output data of each row
-//   while($row = mysqli_fetch_assoc($userInfo)) {
-//       echo "id: " . $userId . " - Name: " . $row["name"]. " - Type: " . $row["type"] . "<br>";
-//   }
-// } else {
-//   echo '0 results';
-// }
+$queryResult = getUSerInfoById($userId,$conn);
+$userInfo = mysqli_fetch_assoc($queryResult);
+echo $userId;
+
+// TODO: Handle acess other user pages by changing id on URL
+
 ?>
-
-<!-- <div class="file-upload-sec">
-    <label class="file-upload">
-      <input type="file" name="fileToUpload" id="pfp-upload">
-      Choose Files
-    </label>
-    <span>Acceptable formats: jpg and png only!</span>
-  </div> -->
-
 <main class="row container-fluid col-12">
   <article class="container user-profile-page col-12 d-flex justify-content-center text-center">
     <section class="personal-info-container d-flex flex-row">
       <div class="d-flex flex-row">
         <div class="profile-picture">
-          <img src="imgs/user-pfp/1.png" alt="Profile Picture">
+          <img src="imgs/user-pfp/<?php echo $userInfo["pfp"];?>" alt="Profile Picture" id="pfp">
           <div class="upload-indicator">
-            <input type="file" name="new-profile-picture" id="new-profile-picture">
-            <label for="new-profile-picture">Click to upload new photo</label>
+            <form action="actions/upload-photo-action.php?id=<?php echo $userId?>" method="post" enctype="multipart/form-data">
+              <input type="file" name="new-profile-picture" id="new-profile-picture" onchange="this.form.submit()">
+              <label for="new-profile-picture">Click to upload new photo</label>
+            </form>
           </div>
         </div>
       </div>
       <div class="d-flex flex-column personal-information">
-        <form action="personal-info-action.php" method="post">
+        <form action="actions/personal-info-change-action.php?id=<?php echo $userId?>" method="post" enctype="multipart/form-data">
           <h1>Personal information</h1>
           <div class="group">      
-            <input type="text" placeholder="Type 'keep' to not update this field!">
+            <input type="text" value="<?php echo $userInfo["name"]?>" name="inpName">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Name</label>
           </div>
           
           <div class="group">      
-            <input type="text" placeholder="Type 'keep' to not update this field!">
+            <input type="text" value="<?php echo $userInfo["email"]?>" name="inpEmail">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Email</label>
           </div>
           <input type="submit" value="Update">
         </form>
-        <form action="password-change-action.php" method="post">
+        <form action="actions/password-change-action.php?id=<?php echo $userId?>" method="post" enctype="multipart/form-data">
+        <!-- TODO: Handle password change -->
           <h1>Reset Password</h1>
           <div class="group">      
             <input type="password" placeholder="New password">

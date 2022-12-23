@@ -1104,11 +1104,6 @@ footer .inner-content p a {
   width: 0;
 }
 
-#pfp {
-  aspect-ratio: 1/1;
-  width: 50px;
-}
-
 main.row {
   height: 100vh;
   width: 100%;
@@ -1162,6 +1157,8 @@ article.user-profile-page > section {
 .profile-picture > img {
   aspect-ratio: 1/1;
   width: 18rem;
+  object-fit: cover;
+  border-radius: 25px;
 }
 .profile-picture {
   position: relative;
@@ -1180,7 +1177,8 @@ article.user-profile-page > section {
   align-items: center;
   justify-content: center;
   visibility: hidden;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease;
+  border-radius: 25px;
 }
 
 .upload-indicator input[type="file"] {
@@ -1203,7 +1201,7 @@ article.user-profile-page > section {
   position: absolute;
   top: 0;
   left: 0;
-  transition: top 0.2s ease-in-out;
+  transition: top 0.3s ease;
 }
 
 .form-group-name > input:focus + label {
@@ -1369,7 +1367,7 @@ input:focus ~ .bar:after {
 
 .personal-information > form > input[type="submit"] {
   cursor: pointer;
-  background-color: var(--primarycolor);
+  background-color: var(--secundarycolor);
   border: none;
   color: white;
   border-radius: 15px;
@@ -1378,9 +1376,9 @@ input:focus ~ .bar:after {
   -webkit-box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
   -moz-box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
   box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .personal-information > form > input[type="submit"]:hover {
-  background-color: #019e6f;
+  background-color: #003b5e;
 }
