@@ -25,7 +25,7 @@ if(isset($_GET["error"]) && $_GET["error"]==2){
   echo "<script type='text/javascript'>toastr.error('Cannot update to the current password!')</script>";
 }
 if(isset($_GET["success"]) && $_GET["success"]==1){
-  echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.success('Password changed!')</script>";
+  echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.success('Update Successful!')</script>";
 }
 
 ?>
@@ -34,7 +34,7 @@ if(isset($_GET["success"]) && $_GET["success"]==1){
     <section class="personal-info-container d-flex flex-row">
       <div class="d-flex flex-row">
         <div class="profile-picture">
-          <img src="imgs/user-pfp/<?php echo $userInfo["pfp"];?>" alt="Profile Picture" id="pfp">
+          <img src="assets/images/user-pfp/<?php echo $userInfo["pfp"];?>" alt="Profile Picture" id="pfp">
           <div class="upload-indicator">
             <form action="actions/upload-photo-action.php?id=<?php echo $userId?>" method="post" enctype="multipart/form-data">
               <input type="file" name="new-profile-picture" id="new-profile-picture" onchange="this.form.submit()">

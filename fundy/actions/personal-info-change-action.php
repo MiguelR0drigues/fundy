@@ -7,5 +7,5 @@
   $userId = $_GET["id"];
 
   updateInfo($userId,$newName,$newEmail,$conn);
-  header("Location: ../user-profile.php?id=$userId");
+  header("Location: ../user-profile.php?id=$userId&success=1");
 ?>
