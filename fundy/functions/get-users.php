@@ -1,6 +1,6 @@
 <?php
 
-function getUSers( $conn){
+function updatePw( $conn){
   $stmt = mysqli_prepare($conn, "SELECT * FROM users");
 
   mysqli_stmt_execute($stmt);
