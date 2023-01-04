@@ -17,11 +17,9 @@
                 </a>
             </li> 
 
-            <li class="nav-item"><a class="nav-link" href="jobs.php">Jobs</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.php">Projects</a></li>
 
             <li class="nav-item"><a class="nav-link" href="about-us.php">About us</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
@@ -29,7 +27,6 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="team.php">Team</a>
                     <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                    <a class="dropdown-item" href="terms.php">Terms</a>
                 </div>
             </li>
             

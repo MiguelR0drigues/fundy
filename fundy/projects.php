@@ -13,8 +13,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Lorem ipsum dolor sit amet</h4>
-              <h2>Jobs</h2>
+              <h4>Sometimes GUIDANCE is all it needs</h4>
+              <h2>Projects</h2>
             </div>
           </div>
         </div>

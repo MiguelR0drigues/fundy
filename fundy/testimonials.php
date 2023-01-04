@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Dolore doloribus sint</h4>
+              <h4>Read from our users</h4>
               <h2>Testimonials</h2>
             </div>
           </div>

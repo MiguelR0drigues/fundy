@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Lorem ipsum dolor</h4>
+              <h4>By the people for the people</h4>
               <h2>Our Team Members</h2>
             </div>
           </div>
@@ -40,7 +40,6 @@
               <div class="down-content">
                 <h4>Johnny William</h4>
                 <span>CO-Founder</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
               </div>
             </div>
           </div>
@@ -62,7 +61,6 @@
               <div class="down-content">
                 <h4>Karry Pitcher</h4>
                 <span>Product Expert</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
               </div>
             </div>
           </div>
@@ -84,7 +82,6 @@
               <div class="down-content">
                 <h4>Michael Soft</h4>
                 <span>Chief Marketing</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
               </div>
             </div>
           </div>
@@ -106,7 +103,6 @@
               <div class="down-content">
                 <h4>Mary Cool</h4>
                 <span>Product Specialist</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
               </div>
             </div>
           </div>
@@ -128,7 +124,6 @@
               <div class="down-content">
                 <h4>George Walker</h4>
                 <span>Product Photographer</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
               </div>
             </div>
           </div>
@@ -150,7 +145,6 @@
               <div class="down-content">
                 <h4>Kate Town</h4>
                 <span>General Manager</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
               </div>
             </div>
           </div>
