@@ -2,7 +2,6 @@
 
 include 'functions/get-user-info.php';
 include 'includes/db-connection.php';
-include 'functions/get-users.php';
 
 include 'includes/header.php';
 include 'includes/preloader.php';
