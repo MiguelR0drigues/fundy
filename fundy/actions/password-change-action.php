@@ -1,14 +1,25 @@
 <?php
   include '../includes/db-connection.php';
   include '../functions/update-pw.php';
+  include '../functions/compare-pw.php';
 
   $pw = $_POST["pw"];
-  $pwConfirm = $_POST["pwConfirm"];
+  $confirmPw = $_POST["confirmPw"];
   $userId = $_GET["id"];
 
-  updatePassword($userId,$pw,$pwConfirm,$conn);
+  echo $confirmPw != $pw ? "true" : "false";
 
-  // TODO: Send error code
+  // error 1 = password and confirm didn't match
+  if($confirmPw != $pw){
+    return header("Location: ../user-profile.php?id=$userId&error=1");
+  }
+  
+  // error 2 = password is the same as the current one
+  if(isPwSame($userId, $pw, $conn)){
+    echo "entrei";
+    return header("Location: ../user-profile.php?id=$userId&error=2");
+  }
 
-  header("Location: ../user-profile.php?id=$userId");
+  updatePw($userId,$pw,$conn);
+  return header("Location: ../user-profile.php?id=$userId&success=1");
 ?>

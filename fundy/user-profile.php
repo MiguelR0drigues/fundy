@@ -2,7 +2,6 @@
 
 include 'functions/get-user-info.php';
 include 'includes/db-connection.php';
-include 'functions/get-users.php';
 
 include 'includes/header.php';
 include 'includes/preloader.php';
@@ -11,11 +10,22 @@ include 'includes/navbar.php';
 $userId = $_GET['id'];
 $queryResult = getUSerInfoById($userId,$conn);
 $userInfo = mysqli_fetch_assoc($queryResult);
-// TODO: Handle acess other user pages by changing id on URL (after login is made)
-// TODO: Make responsive
-// TODO: Fix content overlapping footer
+$_SESSION["id"]=1; // TODO: Remove this when login is done
 
-// TODO: Create toast for errors
+// TODO: Make responsive
+// if($_SESSION["id"] != $_GET["id"] || !$_SESSION["isLoggedIn"]){
+//   header("Location: login.php");
+// }
+
+if(isset($_GET["error"]) && $_GET["error"]==1){
+  echo "<script type='text/javascript'>toastr.error('Passwords dont match!')</script>";
+}
+if(isset($_GET["error"]) && $_GET["error"]==2){
+  echo "<script type='text/javascript'>toastr.error('Cannot update to the current password!')</script>";
+}
+if(isset($_GET["success"]) && $_GET["success"]==1){
+  echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.success('Update Successful!')</script>";
+}
 
 ?>
 <main class="row container-fluid col-12">
@@ -23,7 +33,7 @@ $userInfo = mysqli_fetch_assoc($queryResult);
     <section class="personal-info-container d-flex flex-row">
       <div class="d-flex flex-row">
         <div class="profile-picture">
-          <img src="imgs/user-pfp/<?php echo $userInfo["pfp"];?>" alt="Profile Picture" id="pfp">
+          <img src="assets/images/user-pfp/<?php echo $userInfo["pfp"];?>" alt="Profile Picture" id="pfp">
           <div class="upload-indicator">
             <form action="actions/upload-photo-action.php?id=<?php echo $userId?>" method="post"
               enctype="multipart/form-data">
@@ -56,14 +66,13 @@ $userInfo = mysqli_fetch_assoc($queryResult);
           enctype="multipart/form-data">
           <h1>Reset Password</h1>
           <div class="group">
-            <input type="password" placeholder="New password" name="pw">
+            <input type="password" name="pw" required>
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>New Password</label>
           </div>
-
           <div class="group">
-            <input type="password" placeholder="Confirm new password" name="pwConfirm">
+            <input type="password" name="confirmPw" required>
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Confirm Password</label>

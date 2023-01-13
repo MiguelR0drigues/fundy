@@ -5,7 +5,7 @@ $userId = $_GET["id"];
 
 if (($_FILES['new-profile-picture']['name']!="")){
   // Where the file is going to be stored
-    $target_dir = "imgs/user-pfp/";
+    $target_dir = "assets/images/user-pfp/";
     $file = $_FILES['new-profile-picture']['name'];
     $path = pathinfo($file);
     $filename = $userId;
@@ -20,7 +20,7 @@ if (($_FILES['new-profile-picture']['name']!="")){
   }else{
    move_uploaded_file($temp_name,'D:/XAMP/htdocs/fundy/fundy/'.$path_filename_ext);
    updatePfp($userId,$filename_ext,$conn);
-   header("Location: ../user-profile.php?id=$userId");
+   header("Location: ../user-profile.php?id=$userId&success=1");
   }
 }
 
