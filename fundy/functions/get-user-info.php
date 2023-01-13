@@ -10,13 +10,9 @@ function getUSerInfoById($id, $conn){
   $result = mysqli_stmt_get_result($stmt);
 
   if (mysqli_num_rows($result) > 0) {
-      // // output data of each row
-      // while($row = mysqli_fetch_assoc($result)) {
-      //     echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-      // }
-      return $result;
+    return $result;
   } else {
-      return false;
+    return false;
   }
 
   mysqli_stmt_close($stmt);
