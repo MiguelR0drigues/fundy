@@ -38,7 +38,7 @@ $projects = getProjects($conn);
                       <label>
                            <input type="checkbox">
 
-                           <small>Contract (5)</small>
+                           <small>Financing</small>
                       </label>
                  </div>
 
@@ -46,15 +46,7 @@ $projects = getProjects($conn);
                       <label>
                            <input type="checkbox">
 
-                           <small>Full time (5)</small>
-                      </label>
-                 </div>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                           <small>Internship (5)</small>
+                           <small>Consultancy</small>
                       </label>
                  </div>
 
@@ -87,90 +79,7 @@ $projects = getProjects($conn);
                  </div>
 
                  <br>
-
-                 <h5 style="margin-bottom: 15px">Career levels</h5>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                           <small>Entry Level (5)</small>
-                      </label>
-                 </div>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                           <small>Entry Level (5)</small>
-                      </label>
-                 </div>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                           <small>Entry Level (5)</small>
-                      </label>
-                 </div>
-
-                 <br>
-
-                 <h5 style="margin-bottom: 15px">Education levels</h5>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                           <small>Associate Degree (5)</small>
-                      </label>
-                 </div>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                           <small>Associate Degree (5)</small>
-                      </label>
-                 </div>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                           <small>Associate Degree (5)</small>
-                      </label>
-                 </div>
-
-                 <br>
-
-
-                 <h5 style="margin-bottom: 15px">Years of experience</h5>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                            <small>&lt; 1 (5)</small>
-                      </label>
-                 </div>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                            <small>&lt; 1 (5)</small>
-                      </label>
-                 </div>
-
-                 <div>
-                      <label>
-                           <input type="checkbox">
-
-                            <small>&lt; 1 (5)</small>
-                      </label>
-                 </div>
-            </form>
+              </form>
              </div>
           </div>
           <!-- End Filter -->
