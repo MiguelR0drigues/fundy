@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Dez-2022 às 17:07
+-- Tempo de geração: 23-Jan-2023 às 19:04
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -31,8 +31,10 @@ CREATE TABLE `projects` (
   `id` bigint(20) NOT NULL COMMENT 'project id',
   `title` varchar(500) NOT NULL COMMENT 'project title',
   `description` varchar(9999) NOT NULL COMMENT 'project description',
-  `mainImg` varchar(999) DEFAULT NULL COMMENT 'path to main img',
+  `mainImg` varchar(999) DEFAULT 'default.jpg' COMMENT 'path to main img',
   `images` varchar(999) DEFAULT NULL COMMENT 'path to folder w/ other imgs',
+  `category` varchar(250) DEFAULT 'Category',
+  `Location` varchar(100) DEFAULT 'Private' COMMENT 'City/Country',
   `ownerId` bigint(20) NOT NULL COMMENT 'id of the user that owns the project',
   `amountNeeded` bigint(20) DEFAULT NULL COMMENT 'if money needed, amount of money needed',
   `consultancyNeeded` varchar(600) DEFAULT NULL COMMENT 'if consultancy needed, type of consultancy needed',
@@ -43,15 +45,15 @@ CREATE TABLE `projects` (
 -- Extraindo dados da tabela `projects`
 --
 
-INSERT INTO `projects` (`id`, `title`, `description`, `mainImg`, `images`, `ownerId`, `amountNeeded`, `consultancyNeeded`, `createdAt`) VALUES
-(1, 'Project 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', NULL, NULL, 1, 10000, NULL, '2022-12-22 15:24:22'),
-(2, 'Project 2', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', NULL, NULL, 2, 15000, NULL, '2022-12-22 15:24:22'),
-(3, 'Project 3 ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', NULL, NULL, 3, 20000, NULL, '2022-12-22 15:24:22'),
-(4, 'Project 4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', NULL, NULL, 4, 100000, NULL, '2022-12-22 15:24:22'),
-(5, 'Project 5', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', NULL, NULL, 1, 10000, NULL, '2022-12-22 15:25:05'),
-(6, 'Project 6', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', NULL, NULL, 2, 15000, NULL, '2022-12-22 15:25:06'),
-(7, 'Project 7 ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', NULL, NULL, 3, 20000, NULL, '2022-12-22 15:25:06'),
-(8, 'Project 8', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', NULL, NULL, 4, 100000, NULL, '2022-12-22 15:25:06');
+INSERT INTO `projects` (`id`, `title`, `description`, `mainImg`, `images`, `category`, `Location`, `ownerId`, `amountNeeded`, `consultancyNeeded`, `createdAt`) VALUES
+(1, 'Project 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', 'default.jpg', NULL, 'Category', 'Private', 1, 10000, NULL, '2022-12-22 15:24:22'),
+(2, 'Project 2', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', 'default.jpg', NULL, 'Category', 'Private', 2, 15000, NULL, '2022-12-22 15:24:22'),
+(3, 'Project 3 ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', 'default.jpg', NULL, 'Category', 'Private', 3, 20000, NULL, '2022-12-22 15:24:22'),
+(4, 'Project 4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', 'default.jpg', NULL, 'Category', 'Private', 4, 100000, NULL, '2022-12-22 15:24:22'),
+(5, 'Project 5', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', 'default.jpg', NULL, 'Category', 'Private', 1, 10000, NULL, '2022-12-22 15:25:05'),
+(6, 'Project 6', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', 'default.jpg', NULL, 'Category', 'Private', 2, NULL, 'IT and marketing', '2022-12-22 15:25:06'),
+(7, 'Project 7 ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum!', 'default.jpg', NULL, 'Category', 'Private', 3, 20000, 'Management', '2022-12-22 15:25:06'),
+(8, 'Project 8', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\noptio, eaque rerum!', 'default.jpg', NULL, 'Category', 'Private', 4, 100000, NULL, '2022-12-22 15:25:06');
 
 -- --------------------------------------------------------
 

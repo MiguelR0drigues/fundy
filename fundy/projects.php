@@ -4,8 +4,17 @@
  include('includes/navbar.php');
  include('includes/db-connection.php');
  require_once('functions/get-projects.php');
-$projects = getProjects($conn);
-
+ $per_page = 8;
+  if(!isset($_GET['page'])) {
+    $current_page = 1;
+  }else {
+    $current_page = intval($_GET['page']);
+  }
+ $projects_data = getProjects($conn, $current_page, $per_page);
+ $projects = $projects_data['result'];
+ $total_projects = $projects_data['total'];
+ $total_pages = ceil($total_projects / $per_page);
+        
 ?>
 
 
@@ -122,11 +131,19 @@ $projects = getProjects($conn);
           <!-- TODO: Handle pagination -->
               <div class="col-md-12">
                 <ul class="pages">
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                    <li><a href="#" id="first-page" onclick="goToPage(1)"><<</a></li>
+                    <li><a href="#" id="prev-page" onclick="goToPage(<?php echo $current_page-1; ?>)"><</a></li>
+                    <?php
+                    for($i = 1; $i <= $total_pages; $i++) {
+                        if($i === $current_page) {
+                            echo '<li class="active"><a href="#">'.$i.'</a></li>';
+                        } else {
+                            echo '<li><a href="?page='.$i.'">'.$i.'</a></li>';
+                        }
+                    }
+                    ?>
+                    <li><a href="#" id="next-page" onclick="goToPage(<?php echo $current_page+1; ?>)">></a></li>
+                    <li><a href="#" id="last-page" onclick="goToPage(<?php echo $total_pages; ?>) ">>></a></li>
                 </ul>
               </div>
             </div>
@@ -135,6 +152,16 @@ $projects = getProjects($conn);
       </div>
     </div>
   </body>
+
+  <script>
+    function goToPage(page) {
+        if(page < 1 || page > <?php echo $total_pages; ?>) {
+            return;
+        }
+        window.location.href = "?page=" + page;
+    }
+  </script>
+
   
 <?php
  include('includes/footer.php');
