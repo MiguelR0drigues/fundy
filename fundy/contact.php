@@ -99,9 +99,9 @@
             </div>
           </div>
           <div class="col-md-4">
-            <img src="assets/images/team_01.jpg" class="img-fluid" alt="">
+            <img src="assets/images/logo.png" class="img-fluid" alt="Fundy logo">
 
-            <h5 class="text-center" style="margin-top: 15px;">John Doe</h5>
+            <h5 class="text-center" style="margin-top: 15px;">Fundy</h5>
           </div>
         </div>
       </div>

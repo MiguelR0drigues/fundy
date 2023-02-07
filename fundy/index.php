@@ -38,7 +38,7 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Featured Jobs</h2>
-              <a href="jobs.php">view more <i class="fa fa-angle-right"></i></a>
+              <a href="projects.php">view more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-4">
@@ -130,54 +130,6 @@
       </div>
     </div>
 
-    <div class="services" style="background-image: url(assets/images/other-image-fullscren-1-1920x900.jpg);" >
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Latest blog posts</h2>
-
-              <a href="blog.php">read more <i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item">
-              <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid" alt=""></a>
-
-              <div class="down-content">
-                <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
-
-                <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item">
-              <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
-
-              <div class="down-content">
-                <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
-
-                <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item">
-              <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
-
-              <div class="down-content">
-                <h4><a href="#">Aperiam modi voluptatum fuga officiis cumque</a></h4>
-
-                <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="happy-clients">
       <div class="container">
         <div class="row">
@@ -195,8 +147,9 @@
                   <i class="fa fa-user"></i>
                 </div>
                 <div class="down-content">
-                  <h4>John Doe</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <h4>Annalise Lam</h4>
+                  <h6 style="font-size: 10px; color:gray">Business Angel</h6>
+                  <p class="n-m"><em>"Thanks guys, keep up the good work!"</em></p>
                 </div>
               </div>
               
@@ -205,8 +158,9 @@
                   <i class="fa fa-user"></i>
                 </div>
                 <div class="down-content">
-                  <h4>Jane Smith</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <h4>Khadija Pace</h4>
+                  <h6 style="font-size: 10px; color:gray">Entreprenuer (Prodox)</h6>
+                  <p class="n-m"><em>"Just what I was looking for. I don't know what else to say. It really saves me time and effort. Fundy is exactly what our business has been lacking. Fundy should be nominated for service of the year."</em></p>
                 </div>
               </div>
               
@@ -215,8 +169,9 @@
                   <i class="fa fa-user"></i>
                 </div>
                 <div class="down-content">
-                  <h4>Antony Davis</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <h4>Junaid Day</h4>
+                  <h6 style="font-size: 10px; color:gray">Entreprenuer (Techino)</h6>
+                  <p class="n-m"><em>"Thank You! Without Fundy, we would have gone bankrupt by now. After using Fundy my business skyrocketed!"</em></p>
                 </div>
               </div>
               
@@ -225,8 +180,9 @@
                   <i class="fa fa-user"></i>
                 </div>
                 <div class="down-content">
-                  <h4>John Doe</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <h4>Ray Morrow</h4>
+                  <h6 style="font-size: 10px; color:gray">Business Angel</h6>
+                  <p class="n-m"><em>"I was amazed at the quality of Fundy. I like Fundy more and more each day because it makes my life a lot easier."</em></p>
                 </div>
               </div>
               
@@ -235,8 +191,9 @@
                   <i class="fa fa-user"></i>
                 </div>
                 <div class="down-content">
-                  <h4>Jane Smith</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <h4>Anas Shaffer</h4>
+                  <h6 style="font-size: 10px; color:gray">Entreprenuer (Locksuit)</h6>
+                  <p class="n-m"><em>"We've used Fundy for the last five years. I will recommend you to my colleagues."</em></p>
                 </div>
               </div>
               
@@ -245,8 +202,9 @@
                   <i class="fa fa-user"></i>
                 </div>
                 <div class="down-content">
-                  <h4>Antony Davis</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <h4>Will Clarke</h4>
+                  <h6 style="font-size: 10px; color:gray">Entreprenuer (Klinery)</h6>
+                  <p class="n-m"><em>"Fundy is great. Very easy to use. It's incredible."</em></p>
                 </div>
               </div>
             </div>
@@ -263,8 +221,8 @@
             <div class="inner-content">
               <div class="row">
                 <div class="col-md-8">
-                  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque corporis amet elite author nulla.</p>
+                  <h4>Is there any question left to be answered?</h4>
+                  <p>Don't be shy, contact us! Our team is always available to help!</p>
                 </div>
                 <div class="col-lg-4 col-md-6 text-right">
                   <a href="contact.php" class="filled-button">Contact Us</a>
