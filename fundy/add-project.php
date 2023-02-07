@@ -1,17 +1,17 @@
 <?php
  include ('includes/header.php');
- include('includes/navbar.php');
+//  include('includes/navbar.php');
  include('includes/db-connection.php');
  require_once('functions/get-projects.php');
 ?>
 
 <?php
-session_start(); //starts the session
-if ($_SESSION['email']) { //checks if name is logged in
-} else {
-    header("location:index.php"); // redirects if name is not logged in
-}
-$email = $_SESSION['email']; //assigns name value
+// session_start(); //starts the session
+// if ($_SESSION['email']) { //checks if name is logged in
+// } else {
+//     header("location:index.php"); // redirects if name is not logged in
+// }
+// $email = $_SESSION['email']; //assigns name value
 ?>
 
  <body>
@@ -42,4 +42,5 @@ $email = $_SESSION['email']; //assigns name value
   </script> 
         </div>
     </form>
+    <?php include("includes/footer.php")?>
 </body>
