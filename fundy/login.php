@@ -5,9 +5,9 @@ include ('includes/header.php');
  include('includes/db-connection.php');
  include('functions/isAccountReady.php');
 session_start();
-// if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] ===true) {
-//    header("Location: index.php");
-// }
+if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] ===true) {
+   header("Location: index.php");
+}
 
 if(isset($_GET["error"]) && $_GET["error"] == 1){
     echo "<script type='text/javascript'>toastr.error('Email or password incorrect!')</script>";
@@ -111,9 +111,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: white;
             padding: 50px;
             border-radius: 45px;
-            box-shadow: -1px -1px 127px -8px rgba(0,103,161,0.73);
-            -webkit-box-shadow: -1px -1px 127px -8px rgba(0,103,161,0.73);
-            -moz-box-shadow: -1px -1px 127px -8px rgba(0,103,161,0.73);
+            box-shadow: 16px 14px 101px -4px rgba(0,0,0,0.66);
+            -webkit-box-shadow: 16px 14px 101px -4px rgba(0,0,0,0.66);
+            -moz-box-shadow: 16px 14px 101px -4px rgba(0,0,0,0.66);
         }
 
         body{

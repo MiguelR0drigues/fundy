@@ -57,7 +57,7 @@ $owner = mysqli_fetch_assoc($queryResult);
           <div class="col-md-3 col-sm-4">
             <div class="contact-form">
               <div class="form-group">
-              <button type="submit" class="filled-button btn-block"<?php if($_SESSION["user_type"] == 0){ ?> disabled <?php }?>>Invest now</button>
+              <button type="submit" data-toggle="modal" data-target="#exampleModal" class="filled-button btn-block"<?php if($_SESSION["user_type"] == 0){ ?> disabled <?php }?>>Invest now</button>
               </div>
             </div>
 
@@ -84,14 +84,14 @@ $owner = mysqli_fetch_assoc($queryResult);
               <i class="fa fa-solid fa-money"></i> Financial Help
               </p>
 
-              <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
+              <p>They are looking for an amount of <stong style="font-size: 16px; font-weight:bold"><?php echo $project["amountNeeded"] ."€"; ?></stong>.</p>
               <br>
               <?php  }
               if($project["consultancyNeeded"] != null && $project["consultancyNeeded"] != ""){ ?>
               <p class="lead">
               <i class="fa fa-solid fa-thumbs-up"></i> Consultancy
               </p>
-                  <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
+                  <p>They are looking for consultancy with <stong style="font-size: 16px; font-weight:bold"><?php echo $project["consultancyNeeded"]; ?></stong>.</p>
                 
                 <?php  } ?>
               </div>

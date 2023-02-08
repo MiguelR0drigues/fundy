@@ -38,7 +38,7 @@ if(isset($_SESSION["userID"])){
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
             <?php
                 // false só para testar enquanto não existe a variável de sessão
-                if($_SESSION['isLoggedIn']){
+                if(isset($_SESSION['isLoggedIn'])){
                     echo '<li class="nav-item dropdown">';
                        echo' <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="user-profile.php?id='.$id.'" role="button" aria-haspopup="true" aria-expanded="false">'.$name.'</a>';
                         

@@ -1,12 +1,11 @@
 <?php
 
  include ('includes/header.php');
-//  include('includes/preloader.php');
+ include('includes/preloader.php');
  include('includes/navbar.php');
  include('includes/db-connection.php');
 
 session_start();
-isAccountReady();
 
 if(isset($_GET["error"]) && $_GET["error"] == 1){
     echo "<script type='text/javascript'>toastr.error('All fields are required!')</script>";
@@ -133,13 +132,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding-bottom: 13vh;
         }
         form{
-            margin-top: 9vh;
+            margin-top: 5vh;
             background-color: white;
             padding: 50px;
             border-radius: 45px;
-            box-shadow: -1px -1px 127px -8px rgba(0,103,161,0.73);
-            -webkit-box-shadow: -1px -1px 127px -8px rgba(0,103,161,0.73);
-            -moz-box-shadow: -1px -1px 127px -8px rgba(0,103,161,0.73);
+            box-shadow: 16px 14px 101px -4px rgba(0,0,0,0.66);
+            -webkit-box-shadow: 16px 14px 101px -4px rgba(0,0,0,0.66);
+            -moz-box-shadow: 16px 14px 101px -4px rgba(0,0,0,0.66);
         }
         body{
             background-color: rgb(266,266,266);
