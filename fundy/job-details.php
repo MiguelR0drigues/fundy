@@ -2,6 +2,17 @@
  include ('includes/header.php');
  include('includes/preloader.php');
  include('includes/navbar.php');
+ include('includes/db-connection.php');
+ include('functions/isAccountReady.php');
+ include('functions/get-project-info.php');
+ include('functions/get-user-info.php');
+ isAccountReady();
+ $projectId = $_GET["id"];
+ $queryResult = getProjectById($projectId,$conn);
+$project = mysqli_fetch_assoc($queryResult);
+ $queryResult = getUSerInfoById($project["ownerId"],$conn);
+$owner = mysqli_fetch_assoc($queryResult);
+
 ?>
 
   <body>
@@ -11,9 +22,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Security / Protective Services Jobs</h4>
 
-              <h2>Security Officer - Luxury Retail</h2>
+              <h2><?php echo $project["title"]?></h2>
             </div>
           </div>
         </div>
@@ -25,23 +35,20 @@
         <div class="row">
           <div class="col-md-9 col-sm-8">
               <p class="lead">
-                   <i class="fa fa-map-marker"></i> London &nbsp;&nbsp;
-                   <i class="fa fa-calendar"></i> 20-06-2020 &nbsp;&nbsp;
-                   <i class="fa fa-file"></i> Contract
+                   <i class="fa fa-map-marker"></i> <?php echo $project["location"] ?>
+                   <i class="fa fa-calendar"></i> <?php echo date("Y-m-d", strtotime($project["createdAt"])) ?>
+                   <i class="fa fa-file"></i> <?php echo $project["category"] ?>
               </p>
 
               <br>
               <br>
               
               <div class="form-group">
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+                <h5>Get to know this project</h5>
               </div>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, delectus totam non est excepturi expedita, illum vitae vel dolore exercitationem nobis quasi dicta illo id  quas. Error commodi, modi minus. <br><br>
-                Perferendis, quidem, facilis. Aspernatur alias numquam saepe deleniti dolorem quos repudiandae eaque ad eligendi quam, ratione, error minima culpa suscipit nostrum magni omnis est. Suscipit dolor sint aut maiores eius, id nemo, optio, quos tempora cum est quas. At recusandae obcaecati consequatur ipsa dignissimos, eius commodi qui quae exercitationem fugiat, voluptatem, nesciunt!
-              </p>   
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem voluptatem vero culpa rerum similique labore, nisi minus voluptatum numquam fugiat. <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat fugit sint reiciendis quas temporibus quam maxime nulla vitae consectetur perferendis, fugiat assumenda ex dicta molestias soluta est quo totam cum?</p> 
+              <p style="text-align: justify;"><?php echo $project["description"] ?>
+              </p>
 
               <br>
               <br>
@@ -50,23 +57,13 @@
           <div class="col-md-3 col-sm-4">
             <div class="contact-form">
               <div class="form-group">
-                <button type="submit" class="filled-button btn-block">Apply for this job</button>
+              <button type="submit" class="filled-button btn-block"<?php if($_SESSION["user_type"] == 0){ ?> disabled <?php }?>>Invest now</button>
               </div>
             </div>
 
             <div>
-              <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid wc-image">
+              <img src="assets/images/projects/<?php echo $project["mainImg"]; ?>" alt="Project image" class="img-fluid wc-image">
             </div>
-
-            <br>
-
-            <ul class="social-icons text-center">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-            </ul>
-
             <br>
             <br>
           </div>
@@ -79,18 +76,25 @@
         <div class="row">
           <div class="col-md-9">
             <div class="section-heading">
-              <h2>About Cannon Guards Security ltd</h2>
-            </div>
-
-            <p class="lead">
-                   <i class="fa fa-map-marker"></i> London 
+                <h2>What is '<?php echo $project["title"] ?>' looking for?</h2>
+              </div>
+              <?php 
+                if($project["amountNeeded"] != null && $project["amountNeeded"] > 0){ ?>
+                  <p class="lead">
+              <i class="fa fa-solid fa-money"></i> Financial Help
               </p>
 
-            <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
-            <br>
-            <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
-          </div>
-
+              <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
+              <br>
+              <?php  }
+              if($project["consultancyNeeded"] != null && $project["consultancyNeeded"] != ""){ ?>
+              <p class="lead">
+              <i class="fa fa-solid fa-thumbs-up"></i> Consultancy
+              </p>
+                  <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
+                
+                <?php  } ?>
+              </div>
           <div class="col-md-3">
             <div class="section-heading">
               <h2>Contact Details</h2>
@@ -102,7 +106,7 @@
 
                 <br>
 
-                <strong>John Smith</strong>
+                <strong><?php echo $owner["name"] ?></strong>
               </p>
 
               <p>
@@ -131,7 +135,7 @@
                 <br>
                 
                 <strong>
-                  <a href="mailto:john@carsales.com">john@carsales.com</a>
+                  <a href="mailto:<?php echo $owner["email"] ?>"><?php echo $owner["email"] ?></a>
                 </strong>
               </p>
 

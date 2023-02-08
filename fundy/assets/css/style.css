@@ -1459,3 +1459,7 @@ input:focus ~ .bar:after {
 .register-info > form > input[type="submit"]:hover {
   background-color: #003b5e;
 }
+button.filled-button.btn-block:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}

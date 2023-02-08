@@ -10,12 +10,10 @@ include 'includes/navbar.php';
 $userId = $_GET['id'];
 $queryResult = getUSerInfoById($userId,$conn);
 $userInfo = mysqli_fetch_assoc($queryResult);
-$_SESSION["id"]=1; // TODO: Remove this when login is done
 
-// TODO: Make responsive
-// if($_SESSION["id"] != $_GET["id"] || !$_SESSION["isLoggedIn"]){
-//   header("Location: login.php");
-// }
+if($_SESSION["userID"] != $_GET["id"] || !$_SESSION["isLoggedIn"]){
+  header("Location: login.php");
+}
 
 if(isset($_GET["error"]) && $_GET["error"]==1){
   echo "<script type='text/javascript'>toastr.error('Passwords dont match!')</script>";

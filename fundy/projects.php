@@ -1,9 +1,11 @@
 <?php
  include ('includes/header.php');
-//  include('includes/preloader.php');
+ include('includes/preloader.php');
  include('includes/navbar.php');
  include('includes/db-connection.php');
  require_once('functions/get-projects.php');
+ include('functions/isAccountReady.php');
+ isAccountReady();
  $per_page = 8;
   if(!isset($_GET['page'])) {
     $current_page = 1;
@@ -110,9 +112,9 @@
 
               echo  '<div class="col-md-6">';
               echo '<div class="product-item">';
-              echo '<a href="job-details.php"><img src="assets/images/projects/'.$project["mainImg"].'" alt="Main project image"></a>';
+              echo '<a href="job-details.php?id='.$project["id"].'"><img src="assets/images/projects/'.$project["mainImg"].'" alt="Main project image"></a>';
                   echo '<div class="down-content">';
-                  echo '<a href="job-details.php"><h4>'.$project["title"].'</h4></a>';
+                  echo '<a href="job-details.php?id='.$project["id"].'"><h4>'.$project["title"].'</h4></a>';
 
                   echo '<h6>Looking for: <strong style="color:#00c389">'.$ask.'</strong></h6>';
 

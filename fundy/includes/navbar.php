@@ -3,6 +3,7 @@ session_start();
 $id;
 if(isset($_SESSION["userID"])){
     $id = $_SESSION["userID"];
+    $name = $_SESSION["user_name"];
 }
 ?>
 
@@ -29,8 +30,8 @@ if(isset($_SESSION["userID"])){
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
                 
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="team.php">Team</a>
-                    <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                    <a class="dropdown-item" href="team.php"><i class="fa fa-users" aria-hidden="true"></i>     Team</a>
+                    <a class="dropdown-item" href="testimonials.php"><i class="fa fa-comments"></i>  Testimonials</a>
                 </div>
             </li>
             
@@ -38,7 +39,19 @@ if(isset($_SESSION["userID"])){
             <?php
                 // false só para testar enquanto não existe a variável de sessão
                 if($_SESSION['isLoggedIn']){
-                    echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="user-profile.php?id='.$id.'">Profile</a></li>';
+                    echo '<li class="nav-item dropdown">';
+                       echo' <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="user-profile.php?id='.$id.'" role="button" aria-haspopup="true" aria-expanded="false">'.$name.'</a>';
+                        
+                        echo '<div class="dropdown-menu">';
+                            echo '<a class="dropdown-item" href="user-profile.php?id='.$id.'"><i class="fa fa-user" aria-hidden="true"></i>  Profile Page</a> ';
+                            if($_SESSION["user_type"] == 0){
+                                echo '<a class="dropdown-item" href="add-project.php?id='.$id.'"><i class="fa fa-plus" aria-hidden="true"></i>  Publish your startup</a> ';
+                                echo '<a class="dropdown-item" href="view-projects.php?id='.$id.'"><i class="fa fa-solid fa-folder-open"></i>  View your startups</a> ';
+                            }else{
+                                echo '<a class="dropdown-item" href="view-investments.php?id='.$id.'"><i class="fa fa-solid fa-briefcase"></i>  View your startups</a> ';
+                            }
+                        echo '</div>';
+                    echo '</li>';
                     echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="logout.php">Logout</a></li>';
                 }else{
                     echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="login.php">Sign in</a></li>';
