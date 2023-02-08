@@ -47,8 +47,9 @@
             <input type="file" name="image" accept="image/*" />
         </div>
          <div class="form-group" style="padding:10px 20px;">
-            <button type="submit" name="Submit">ADD PROJECT</button>
-    
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" name="Submit">ADD PROJECT</button>
+            </div>
         <script>
         document.getElementById("submitBtn").addEventListener("click", myFunction);
         function myFunction() {
