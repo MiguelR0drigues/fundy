@@ -1258,7 +1258,7 @@ input:-ms-input-placeholder {
 /* active state */
 .group > input:focus ~ label,
 .group > input:valid ~ label {
-  top: -20px;
+  top: -7px;
   font-size: 14px;
   color: var(--primarycolor);
 }
@@ -1375,5 +1375,87 @@ input:focus ~ .bar:after {
 }
 
 .personal-information > form > input[type="submit"]:hover {
+  background-color: #003b5e;
+}
+
+.login-info {
+  display: flex;
+  align-items: center;
+  margin: 1rem auto auto auto;
+}
+.login-info > form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-info > form > h1 {
+  text-transform: uppercase;
+  color: var(--secundarycolor);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.login-info > form > .group {
+  align-items: flex-start;
+  margin-top: 3rem;
+}
+
+.login-info > form > input[type="submit"] {
+  cursor: pointer;
+  background-color: var(--secundarycolor);
+  border: none;
+  color: white;
+  border-radius: 15px;
+  width: 10rem;
+  height: 2rem;
+  -webkit-box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
+  -moz-box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
+  box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
+  transition: all 0.3s ease;
+}
+
+.login-info > form > input[type="submit"]:hover {
+  background-color: #003b5e;
+}
+.register-info {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto auto auto;
+}
+.register-info > form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register-info > form > h1 {
+  text-transform: uppercase;
+  color: var(--secundarycolor);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.register-info > form > .group {
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.register-info > form > input[type="submit"] {
+  cursor: pointer;
+  background-color: var(--secundarycolor);
+  border: none;
+  color: white;
+  border-radius: 15px;
+  width: 10rem;
+  height: 2rem;
+  -webkit-box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
+  -moz-box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
+  box-shadow: 14px 11px 38px -10px rgba(128, 128, 128, 1);
+  transition: all 0.3s ease;
+}
+
+.register-info > form > input[type="submit"]:hover {
   background-color: #003b5e;
 }

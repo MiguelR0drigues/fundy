@@ -2,9 +2,12 @@
  include ('includes/header.php');
  include('includes/preloader.php');
  include('includes/navbar.php');
+ include('functions/isAccountReady.php');
+ session_start();
+ isAccountReady();
 
 ?>
-
+ 
   <body>
     <!-- Page Content -->
     <!-- Banner Starts Here -->
@@ -90,9 +93,9 @@
                 <h4><small><i class="fa fa-briefcase"></i> Medical / Health Jobs <br> <strong><i class="fa fa-building"></i> BMI Kings Park Hospital</strong></small></h4>
 
                 <small>
-                     <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                     <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                     <strong title="Location"><i class="fa fa-map-marker"></i> London</strong>
+                    <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <strong title="Location"><i class="fa fa-map-marker"></i> London</strong>
                 </small>
               </div>
             </div>

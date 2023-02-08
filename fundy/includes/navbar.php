@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+$id;
+if(isset($_SESSION["userID"])){
+    $id = $_SESSION["userID"];
+}
 ?>
 
 <!-- Header -->
@@ -33,12 +37,12 @@
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
             <?php
                 // false só para testar enquanto não existe a variável de sessão
-                if($_SESSION['isLoggedIn'] ?? false){
-                    echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="user-profile.php">Profile</a></li>';
+                if($_SESSION['isLoggedIn']){
+                    echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="user-profile.php?id='.$id.'">Profile</a></li>';
                     echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="logout.php">Logout</a></li>';
                 }else{
                     echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="login.php">Sign in</a></li>';
-                    echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="register.php">Sign up</a></li>';
+                    echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="registration.php">Sign up</a></li>';
                 }
             ?>
             
