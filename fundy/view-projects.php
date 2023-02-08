@@ -3,10 +3,10 @@ include('includes/header.php');
 include('includes/preloader.php');
 include('includes/navbar.php');
 include('includes/db-connection.php');
-include('functions/get-investments.php');
+include('functions/get-my-projects.php');
 
 $userId = $_GET["id"];
-$projects_data = getInvestments($userId,$conn);
+$projects_data = getMyProjects($userId,$conn);
  $projects = $projects_data;
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
@@ -15,7 +15,7 @@ $projects_data = getInvestments($userId,$conn);
             <div class="row">
                  <div class="col-lg-10 mx-auto mb-4">
                     <div class="section-title text-center ">
-                        <h3 class="top-c-sep" style="color:#0067a1">Your investments</h3>
+                        <h3 class="top-c-sep" style="color:#0067a1">Your Projects</h3>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@ $projects_data = getInvestments($userId,$conn);
                         <div class="filter-result">
                           <?php
                           if (!isset($projects) || empty($projects)){
-                            ?> <p style="text-align: center; padding: 30px; padding-bottom:0;">No investments found.</p>
+                            ?> <p style="text-align: center; padding: 30px; padding-bottom:0;">No projects found.</p>
                             <?php
                           }else{
                             foreach($projects as $project){
@@ -34,7 +34,7 @@ $projects_data = getInvestments($userId,$conn);
                               <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
                                 <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
                                     <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                        <img src="assets/images/projects/<?php echo $project["image"] ?>" alt="Project Image" style="width:80px;height:80px;border-radius:100%;">
+                                        <img src="assets/images/projects/<?php echo $project["mainImg"] ?>" alt="Project Image" style="width:80px;height:80px;border-radius:100%;">
                                     </div>
                                     <div class="job-content">
                                         <h5 class="text-center text-md-left"><?php echo $project["title"] ?></h5>
@@ -42,16 +42,16 @@ $projects_data = getInvestments($userId,$conn);
                                             <li class="mr-md-4">
                                                 <i class="zmdi zmdi-pin mr-2"></i> <?php echo $project["location"] ?>
                                             </li>
-                                            <?php if($project["givenAmount"] != null && $project["givenAmount"]!=""){
+                                            <?php if($project["amountNeeded"] != null && $project["amountNeeded"]!=""){
                                             ?>
                                               <li class="mr-md-4">
-                                                <i class="zmdi zmdi-money mr-2"></i> <?php echo $project["givenAmount"] ?>
+                                                <i class="zmdi zmdi-money mr-2"></i> <?php echo $project["amountNeeded"] ?>
                                               </li>
                                            <?php } ?>
-                                            <?php if($project["givenConsultancy"] != null && $project["givenConsultancy"]!=""){
+                                            <?php if($project["consultancyNeeded"] != null && $project["consultancyNeeded"]!=""){
                                             ?>
                                               <li class="mr-md-4">
-                                                <i class="zmdi zmdi-time mr-2"></i> <?php echo $project["givenConsultancy"] ?>
+                                                <i class="zmdi zmdi-time mr-2"></i> <?php echo $project["consultancyNeeded"] ?>
                                               </li>
                                            <?php } ?>
                                            
@@ -59,7 +59,7 @@ $projects_data = getInvestments($userId,$conn);
                                     </div>
                                 </div>
                                 <div class="job-right my-4 flex-shrink-0">
-                                    <a href="actions/delete-investment-action.php?user_id=<?php echo $userId; ?>&project_id=<?php echo $project["project_id"]; ?>" class="btn d-block w-100 d-sm-inline-block btn-light"><i class="fa fa-solid fa-trash" style="font-size: 28px; color:red"></i></a>
+                                    <a href="actions/delete-project-action.php?project_id=<?php echo $project["id"]; ?>" class="btn d-block w-100 d-sm-inline-block btn-light"><i class="fa fa-solid fa-trash" style="font-size: 28px; color:red"></i></a>
                                 </div>
                             </div>
                           <?php
@@ -71,7 +71,7 @@ $projects_data = getInvestments($userId,$conn);
                     </div>
                   <?php 
                   if(!isset($projects) || empty($projects)){ ?>
-                    <a href="projects.php" style="text-align: center; padding: 10px;"><p style="color:#0067a1; text-decoration:underline">Start investing now!</p></a>
+                    <a href="projects.php" style="text-align: center; padding: 10px;"><p style="color:#0067a1; text-decoration:underline">Add your project to fundy now!</p></a>
                 <?php }else{
                      ?>
                     <!-- START Pagination -->
