@@ -48,7 +48,7 @@ if(isset($_SESSION["userID"])){
                                 echo '<a class="dropdown-item" href="add-project.php?id='.$id.'"><i class="fa fa-plus" aria-hidden="true"></i>  Publish your startup</a> ';
                                 echo '<a class="dropdown-item" href="view-projects.php?id='.$id.'"><i class="fa fa-solid fa-folder-open"></i>  View your startups</a> ';
                             }else{
-                                echo '<a class="dropdown-item" href="view-investments.php?id='.$id.'"><i class="fa fa-solid fa-briefcase"></i>  View your startups</a> ';
+                                echo '<a class="dropdown-item" href="view-investments.php?id='.$id.'"><i class="fa fa-solid fa-briefcase"></i>  View your investments</a> ';
                             }
                         echo '</div>';
                     echo '</li>';

@@ -123,7 +123,7 @@
                   echo '<small>';
                   echo '<strong title="Posted on"><i class="fa fa-calendar"></i>  '. date("d.m.Y", strtotime($project["createdAt"])).'</strong> &nbsp;&nbsp;&nbsp;&nbsp;' ;
                   // echo '<strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;';
-                  echo '<strong title="Location"><i class="fa fa-map-marker"></i> Location</strong>';
+                  echo '<strong title="Location"><i class="fa fa-map-marker"></i> '.$project["Location"].'</strong>';
                   echo '</small>';
                   echo '</div>';
                   echo '</div>';
