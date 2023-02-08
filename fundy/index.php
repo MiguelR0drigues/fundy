@@ -15,20 +15,20 @@
       <div class="owl-banner owl-carousel">
         <div class="banner-item-01">
           <div class="text-content">
-            <h4>Find your car today!</h4>
-            <h2>Lorem ipsum dolor sit amet</h2>
+            <h4>Find the perfect business partner with our web platform!</h4>
+            <h2>Connect, Collaborate, Succeed</h2>
           </div>
         </div>
         <div class="banner-item-02">
           <div class="text-content">
-            <h4>Fugiat Aspernatur</h4>
-            <h2>Laboriosam reprehenderit ducimus</h2>
+            <h4>Join the Community of Passionate Entrepreneurs and Investors</h4>
+            <h2 style="color:#0067a1">Grow your ideas and investments</h2>
           </div>
         </div>
         <div class="banner-item-03">
           <div class="text-content">
-            <h4>Saepe Omnis</h4>
-            <h2>Quaerat suscipit unde minus dicta</h2>
+            <h4>Discover the power of connection and collaboration in entrepreneurship</h4>
+            <h2 style="color:#0067a1">Turn Your Dreams into Reality with Fundy</h2>
           </div>
         </div>
       </div>
@@ -114,13 +114,7 @@
           </div>
           <div class="col-md-6">
             <div class="left-content">
-              <p>Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit. Explicabo, esse consequatur alias repellat in excepturi inventore ad <a href="#">asperiores</a> tempora ipsa. Accusantium tenetur voluptate labore aperiam molestiae rerum excepturi minus in pariatur praesentium, corporis, aliquid dicta.</p>
-              <ul class="featured-list">
-                <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                <li><a href="#">Consectetur an adipisicing elit</a></li>
-                <li><a href="#">It aquecorporis nulla aspernatur</a></li>
-                <li><a href="#">Corporis, omnis doloremque</a></li>
-              </ul>
+              <p style="text-align:justify;">At Fundy, our mission is to provide a solution for entrepreneurs and investors to connect and collaborate. Our web platform is designed to bridge the gap between entrepreneurs with big ideas and investors who are looking for their next great investment opportunity. Our goal is to help entrepreneurs turn their dreams into a reality and create a thriving community of people who are passionate about helping each other succeed. With our platform, entrepreneurs and investors can connect, discuss projects, and explore ways to work together to achieve their goals. So if you're an entrepreneur with a great idea or an investor who wants to make a difference, join us at Fundy and let's make it happen.</p>
               <a href="about-us.php" class="filled-button">Read More</a>
             </div>
           </div>
