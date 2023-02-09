@@ -42,7 +42,7 @@ if (($_FILES['image']['name']!="")){
       if (mysqli_stmt_execute($stmt)) {
         header("Location: ../view-projects.php?id=$userId&success=1");
       } else {
-        header("location: login.php?error=3");
+        header("location: ../add-project.php?id=$userId&error=1");
       }
 
       // Close statement

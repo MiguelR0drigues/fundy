@@ -12,6 +12,6 @@ $user_id = $user_id;
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
-header("Location: ../view-investments.php?id=$user_id");
+header("Location: ../view-investments.php?id=$user_id?success=2");
 
 mysqli_stmt_close($stmt);

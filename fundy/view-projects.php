@@ -8,6 +8,13 @@ include('functions/get-my-projects.php');
 $userId = $_GET["id"];
 $projects_data = getMyProjects($userId,$conn);
  $projects = $projects_data;
+
+ if(isset($_GET["success"]) && $_GET["success"]==1){
+  echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.success('Added company successful!')</script>";
+  }
+ if(isset($_GET["success"]) && $_GET["success"]==2){
+  echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.success('Deleted company successful!')</script>";
+  }
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
 <link rel="stylesheet" href="assets/css/tables.css">
@@ -71,7 +78,7 @@ $projects_data = getMyProjects($userId,$conn);
                     </div>
                   <?php 
                   if(!isset($projects) || empty($projects)){ ?>
-                    <a href="projects.php" style="text-align: center; padding: 10px;"><p style="color:#0067a1; text-decoration:underline">Add your company to fundy now!</p></a>
+                    <a href="add-project.php" style="text-align: center; padding: 10px;"><p style="color:#0067a1; text-decoration:underline">Add your company to fundy now!</p></a>
                 <?php }else{
                      ?>
                     <!-- START Pagination -->
