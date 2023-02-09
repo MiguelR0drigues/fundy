@@ -4,7 +4,6 @@ include ('includes/header.php');
  include('includes/navbar.php');
  include('includes/db-connection.php');
  include('functions/isAccountReady.php');
-session_start();
 if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] ===true) {
    session_destroy();
 }

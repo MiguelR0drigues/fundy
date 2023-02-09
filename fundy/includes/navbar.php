@@ -21,7 +21,7 @@ if(isset($_SESSION["userID"])){
                 </a>
             </li> 
 
-            <li class="nav-item"><a class="nav-link" href="projects.php?page=1">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.php?page=1">Companies</a></li>
 
             <li class="nav-item"><a class="nav-link" href="about-us.php">About us</a></li>
 
@@ -45,9 +45,9 @@ if(isset($_SESSION["userID"])){
                             echo '<a class="dropdown-item" href="user-profile.php?id='.$id.'"><i class="fa fa-user" aria-hidden="true"></i>  Profile Page</a> ';
                             if($_SESSION["user_type"] == 0){
                                 echo '<a class="dropdown-item" href="add-project.php?id='.$id.'"><i class="fa fa-plus" aria-hidden="true"></i>  Publish your startup</a> ';
-                                echo '<a class="dropdown-item" href="view-projects.php?id='.$id.'"><i class="fa fa-solid fa-folder-open"></i>  View your companies</a> ';
+                                echo '<a class="dropdown-item" href="view-projects.php?id='.$id.'"><i class="fa fa-solid fa-folder-open"></i>  View my companies</a> ';
                             }else{
-                                echo '<a class="dropdown-item" href="view-investments.php?id='.$id.'"><i class="fa fa-solid fa-briefcase"></i>  View your investments</a> ';
+                                echo '<a class="dropdown-item" href="view-investments.php?id='.$id.'"><i class="fa fa-solid fa-briefcase"></i>  View my investments</a> ';
                             }
                         echo '</div>';
                     echo '</li>';

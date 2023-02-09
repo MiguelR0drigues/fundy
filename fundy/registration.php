@@ -5,8 +5,6 @@
  include('includes/navbar.php');
  include('includes/db-connection.php');
 
-session_start();
-
 if(isset($_GET["error"]) && $_GET["error"] == 1){
     echo "<script type='text/javascript'>toastr.error('All fields are required!')</script>";
 }
