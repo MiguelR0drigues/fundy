@@ -1,6 +1,5 @@
 <?php
 session_start();
-$id;
 if(isset($_SESSION["userID"])){
     $id = $_SESSION["userID"];
     $name = $_SESSION["user_name"];
@@ -46,7 +45,7 @@ if(isset($_SESSION["userID"])){
                             echo '<a class="dropdown-item" href="user-profile.php?id='.$id.'"><i class="fa fa-user" aria-hidden="true"></i>  Profile Page</a> ';
                             if($_SESSION["user_type"] == 0){
                                 echo '<a class="dropdown-item" href="add-project.php?id='.$id.'"><i class="fa fa-plus" aria-hidden="true"></i>  Publish your startup</a> ';
-                                echo '<a class="dropdown-item" href="view-projects.php?id='.$id.'"><i class="fa fa-solid fa-folder-open"></i>  View your startups</a> ';
+                                echo '<a class="dropdown-item" href="view-projects.php?id='.$id.'"><i class="fa fa-solid fa-folder-open"></i>  View your companies</a> ';
                             }else{
                                 echo '<a class="dropdown-item" href="view-investments.php?id='.$id.'"><i class="fa fa-solid fa-briefcase"></i>  View your investments</a> ';
                             }
@@ -58,7 +57,6 @@ if(isset($_SESSION["userID"])){
                     echo '<li class="nav-item nav-item-auth"><a class="nav-link" href="registration.php">Sign up</a></li>';
                 }
             ?>
-            
         </ul>
         </div>
     </div>

@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding-bottom: 13vh;
         }
         form{
-            margin-top: 5vh;
+            margin-top: 10vh;
             background-color: white;
             padding: 50px;
             border-radius: 45px;

@@ -6,7 +6,7 @@ include ('includes/header.php');
  include('functions/isAccountReady.php');
 session_start();
 if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] ===true) {
-   header("Location: index.php");
+   session_destroy();
 }
 
 if(isset($_GET["error"]) && $_GET["error"] == 1){

@@ -3,7 +3,6 @@
  include('includes/preloader.php');
  include('includes/navbar.php');
  include('functions/isAccountReady.php');
- session_start();
  isAccountReady();
 
 ?>
