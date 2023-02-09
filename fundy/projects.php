@@ -112,7 +112,7 @@
 
               echo  '<div class="col-md-6">';
               echo '<div class="product-item">';
-              echo '<a href="job-details.php?id='.$project["id"].'"><img src="assets/images/projects/'.$project["mainImg"].'" alt="Main project image"></a>';
+              echo '<a href="job-details.php?id='.$project["id"].'"><img src="assets/images/projects/'.$project["mainImg"].'" alt="Main project image" style="object-fit:cover;width:370px;height:270px;"></a>';
                   echo '<div class="down-content">';
                   echo '<a href="job-details.php?id='.$project["id"].'"><h4>'.$project["title"].'</h4></a>';
 

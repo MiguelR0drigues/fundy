@@ -15,7 +15,7 @@ $projects_data = getMyProjects($userId,$conn);
             <div class="row">
                  <div class="col-lg-10 mx-auto mb-4">
                     <div class="section-title text-center ">
-                        <h3 class="top-c-sep" style="color:#0067a1">Your Projects</h3>
+                        <h3 class="top-c-sep" style="color:#0067a1">Your Companies</h3>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@ $projects_data = getMyProjects($userId,$conn);
                         <div class="filter-result">
                           <?php
                           if (!isset($projects) || empty($projects)){
-                            ?> <p style="text-align: center; padding: 30px; padding-bottom:0;">No projects found.</p>
+                            ?> <p style="text-align: center; padding: 30px; padding-bottom:0;">No companies found.</p>
                             <?php
                           }else{
                             foreach($projects as $project){
@@ -71,7 +71,7 @@ $projects_data = getMyProjects($userId,$conn);
                     </div>
                   <?php 
                   if(!isset($projects) || empty($projects)){ ?>
-                    <a href="projects.php" style="text-align: center; padding: 10px;"><p style="color:#0067a1; text-decoration:underline">Add your project to fundy now!</p></a>
+                    <a href="projects.php" style="text-align: center; padding: 10px;"><p style="color:#0067a1; text-decoration:underline">Add your company to fundy now!</p></a>
                 <?php }else{
                      ?>
                     <!-- START Pagination -->
