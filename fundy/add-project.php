@@ -9,7 +9,10 @@
     echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.success('Update Successful!')</script>";
   }
  if(isset($_GET["error"]) && $_GET["error"]==1){
-    echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.success('Failed to create company!')</script>";
+    echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.error('Failed to create company!')</script>";
+  }
+ if(isset($_GET["error"]) && $_GET["error"]==2){
+    echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.error('Every field is required!')</script>";
   }
 ?> 
     <div class="container">
@@ -58,6 +61,17 @@
               <span class="bar"></span>
               <label>Consultancy Needed</label>
             </div>
+          </div>
+          
+          <label for="sel1" style="text-align: left; width:100%;color:gray;margin-bottom:-5px;">Category</label>
+          <div class="form-group group">
+            <select class="form-control" id="sel1" name="category" require>
+              <option value="It">Information technology (IT)</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Finances">Finances</option>
+              <option value="Management">Management</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
             <div class="custom-file">

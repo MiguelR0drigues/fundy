@@ -8,6 +8,11 @@ include('functions/get-investments.php');
 $userId = $_GET["id"];
 $projects_data = getInvestments($userId,$conn);
 $projects = $projects_data;
+
+if(isset($_GET["success"]) && $_GET["success"]==1){
+  echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.success('Investment Successful!')</script>";
+}
+
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
 <link rel="stylesheet" href="assets/css/tables.css">

@@ -8,6 +8,8 @@ $title = $_POST["title"];
 $description = $_POST["description"];
 $amountNeeded = (isset($_POST["amountNeeded"])) ? $_POST["amountNeeded"] : null;
 $consultancyNeeded = (isset($_POST["consultancyNeeded"])) ? $_POST["consultancyNeeded"] : null;
+$category = $_POST["category"];
+
 
 if (($_FILES['image']['name']!="")){
   // Where the file is going to be stored
@@ -26,10 +28,10 @@ if (($_FILES['image']['name']!="")){
   }else{
     move_uploaded_file($temp_name,'D:/XAMP/htdocs/fundy/fundy/'.$path_filename_ext);
 
-    $sql = "INSERT INTO `projects` (title, description, mainImg, ownerId, amountNeeded, consultancyNeeded) VALUES (?,?,?,?,?,?)";
+    $sql = "INSERT INTO `projects` (title, description, mainImg, ownerId, amountNeeded, consultancyNeeded, category) VALUES (?,?,?,?,?,?,?)";
     if ($stmt = mysqli_prepare($conn, $sql)) {
       // Bind variables to the prepared statement as parameters
-      mysqli_stmt_bind_param($stmt, "sssiis", $param_title, $param_desc, $param_image, $param_owner, $param_amount,$param_consult);
+      mysqli_stmt_bind_param($stmt, "sssiiss", $param_title, $param_desc, $param_image, $param_owner, $param_amount,$param_consult,$param_category);
       // Set parameters
       $param_title = $title;
       $param_desc = $description;
@@ -37,6 +39,7 @@ if (($_FILES['image']['name']!="")){
       $param_owner = $userId;
       $param_amount = $amountNeeded;
       $param_consult = $consultancyNeeded;
+      $param_category = $category;
 
       // Attempt to execute the prepared statement
       if (mysqli_stmt_execute($stmt)) {
@@ -53,5 +56,4 @@ if (($_FILES['image']['name']!="")){
 
   }
 }
-
  ?> 

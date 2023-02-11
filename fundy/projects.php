@@ -41,7 +41,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-             <div class="contact-form">
+             <!-- <div class="contact-form">
                 <form action="#">
                  <h5 style="margin-bottom: 15px">Type</h5>
 
@@ -69,7 +69,7 @@
                       <label>
                            <input type="checkbox">
 
-                           <small>Accounting / Finance / Insurance Jobs (5)</small>
+                           <small>Accounting</small>
                       </label>
                  </div>
 
@@ -77,7 +77,7 @@
                       <label>
                            <input type="checkbox">
 
-                           <small>Accounting / Finance / Insurance Jobs (5)</small>
+                           <small>Finance</small>
                       </label>
                  </div>
 
@@ -85,13 +85,13 @@
                       <label>
                            <input type="checkbox">
 
-                           <small>Accounting / Finance / Insurance Jobs (5)</small>
+                           <small>IT</small>
                       </label>
                  </div>
 
                  <br>
               </form>
-             </div>
+             </div> -->
           </div>
           <!-- End Filter -->
           <!-- Content -->

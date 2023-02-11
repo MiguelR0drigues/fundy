@@ -45,18 +45,17 @@
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="job-details.php"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
+              <a href="job-details.php?id=16"><img src="assets/images/projects/16.jpg" alt="Company logo"></a>
               <div class="down-content">
-                <a href="job-details.php"><h4>Lorem ipsum dolor sit amet</h4></a>
+                <a href="job-details.php?id=16"><h4>Medical Company</h4></a>
 
-                <h6>$60 000</h6>
+                <h6>Looking for: <strong style="color:#00c389">Consultancy</strong></h6>
 
-                <h4><small><i class="fa fa-briefcase"></i> Medical / Health Jobs <br> <strong><i class="fa fa-building"></i> BMI Kings Park Hospital</strong></small></h4>
+                <h4><small><i class="fa fa-briefcase"></i> Medical / Health</small></h4>
 
                 <small>
                      <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                     <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                     <strong title="Location"><i class="fa fa-map-marker"></i> London</strong>
+                     <strong title="Location"><i class="fa fa-map-marker"></i> Private</strong>
                 </small>
               </div>
             </div>
@@ -64,18 +63,17 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="job-details.php"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+              <a href="job-details.php?id=15"><img src="assets/images/projects/15.jpg" style="height:232px; object-fit:cover" alt="Company logo"></a>
               <div class="down-content">
-                <a href="job-details.php"><h4>Lorem ipsum dolor sit amet</h4></a>
+                <a href="job-details.php?id=15"><h4>IT Company</h4></a>
 
-                <h6>$60 000</h6>
+                <h6>Looking for: <strong style="color:#00c389">Financing and Consultancy</strong></h6>
 
-                <h4><small><i class="fa fa-briefcase"></i> Medical / Health Jobs <br> <strong><i class="fa fa-building"></i> BMI Kings Park Hospital</strong></small></h4>
+                <h4><small><i class="fa fa-briefcase"></i> IT</small></h4>
 
                 <small>
                      <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                     <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                     <strong title="Location"><i class="fa fa-map-marker"></i> London</strong>
+                     <strong title="Location"><i class="fa fa-map-marker"></i> Private</strong>
                 </small>
               </div>
             </div>
@@ -83,18 +81,17 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="job-details.php"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+              <a href="job-details.php?id=17"><img src="assets/images/projects/17.jpg" alt="Company logo"></a>
               <div class="down-content">
-                <a href="job-details.php"><h4>Lorem ipsum dolor sit amet</h4></a>
+                <a href="job-details.php?id=17"><h4>Marketing Company</h4></a>
 
-                <h6>$60 000</h6>
+                <h6>Looking for: <strong style="color:#00c389">Financing</strong></h6>
 
-                <h4><small><i class="fa fa-briefcase"></i> Medical / Health Jobs <br> <strong><i class="fa fa-building"></i> BMI Kings Park Hospital</strong></small></h4>
+                <h4><small><i class="fa fa-briefcase"></i> Marketing</small></h4>
 
                 <small>
                     <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <strong title="Type"><i class="fa fa-file"></i> Contract</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <strong title="Location"><i class="fa fa-map-marker"></i> London</strong>
+                    <strong title="Location"><i class="fa fa-map-marker"></i> Private</strong>
                 </small>
               </div>
             </div>

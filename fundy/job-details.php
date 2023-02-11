@@ -6,12 +6,18 @@
  include('functions/isAccountReady.php');
  include('functions/get-project-info.php');
  include('functions/get-user-info.php');
+
  isAccountReady();
+
  $projectId = $_GET["id"];
  $queryResult = getProjectById($projectId,$conn);
-$project = mysqli_fetch_assoc($queryResult);
+ $project = mysqli_fetch_assoc($queryResult);
  $queryResult = getUSerInfoById($project["ownerId"],$conn);
-$owner = mysqli_fetch_assoc($queryResult);
+ $owner = mysqli_fetch_assoc($queryResult);
+
+ if(isset($_GET["error"]) && $_GET["error"]==1){
+  echo "<script type='text/javascript'>toastr.options.closeButton = true;toastr.error('Already invested in this company!')</script>";
+ }
 
 ?>
 
@@ -159,66 +165,50 @@ $owner = mysqli_fetch_assoc($queryResult);
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Book Now</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Invest Now</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="contact-form">
-              <form action="#" id="contact">
-                  <div class="row">
-                       <div class="col-md-6">
-                          <fieldset>
-                            <input type="text" class="form-control" placeholder="Pick-up location" required="">
-                          </fieldset>
-                       </div>
+            <form action="actions/invest-action.php?id_project=<?php echo $projectId ?>&id_user=<?php echo $_SESSION["userID"] ?>" method="post" id="contact">
+              
+              <input type="text" class="form-control" placeholder="Enter full name" required="" name="name">
 
-                       <div class="col-md-6">
-                          <fieldset>
-                            <input type="text" class="form-control" placeholder="Return location" required="">
-                          </fieldset>
-                       </div>
-                  </div>
+              <div class="row">
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input type="email" class="form-control" placeholder="Enter email address" required="" name="email">
+                      </fieldset>
+                    </div>
+              </div>
+              
+              <div class="row">
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input type="number" class="form-control" placeholder="Amount offered (if any)" required="" name="amountOffered">
+                      </fieldset>
+                    </div>
 
-                  <div class="row">
-                       <div class="col-md-6">
-                          <fieldset>
-                            <input type="text" class="form-control" placeholder="Pick-up date/time" required="">
-                          </fieldset>
-                       </div>
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input type="text" class="form-control" placeholder="Consultancy offered (if any)" required="" name="consultancyOffered">
+                      </fieldset>
+                    </div>
+              </div>  
 
-                       <div class="col-md-6">
-                          <fieldset>
-                            <input type="text" class="form-control" placeholder="Return date/time" required="">
-                          </fieldset>
-                       </div>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Enter full name" required="">
-
-                  <div class="row">
-                       <div class="col-md-6">
-                          <fieldset>
-                            <input type="text" class="form-control" placeholder="Enter email address" required="">
-                          </fieldset>
-                       </div>
-
-                       <div class="col-md-6">
-                          <fieldset>
-                            <input type="text" class="form-control" placeholder="Enter phone" required="">
-                          </fieldset>
-                       </div>
-                  </div>
-              </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Invest Now</button>
+              </div>
+            </form>
            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Book Now</button>
           </div>
         </div>
       </div>
     </div>
+
   </body>
   
 <?php
