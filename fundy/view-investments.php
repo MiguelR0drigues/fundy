@@ -39,10 +39,10 @@ if(isset($_GET["success"]) && $_GET["success"]==1){
                               <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
                                 <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
                                     <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                        <img src="assets/images/projects/<?php echo $project["image"] ?>" alt="Project Image" style="width:80px;height:80px;border-radius:100%;">
+                                        <a href="job-details.php?id=<?php echo $project["project_id"] ?>"><img src="assets/images/projects/<?php echo $project["image"] ?>" alt="Project Image" style="width:80px;height:80px;border-radius:100%;"></a>
                                     </div>
                                     <div class="job-content">
-                                        <h5 class="text-center text-md-left"><?php echo $project["title"] ?></h5>
+                                        <h5 class="text-center text-md-left"><a href="job-details.php?id=<?php echo $project["project_id"] ?>"><?php echo $project["title"] ?></a></h5>
                                         <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
                                             <li class="mr-md-4">
                                                 <i class="zmdi zmdi-pin mr-2"></i> <?php echo $project["location"] ?>
